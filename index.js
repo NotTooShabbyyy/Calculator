@@ -4,6 +4,7 @@ let operation;
 
 
 
+
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -31,7 +32,26 @@ function operate(operator, num1, num2) {
     return mathOperations[operator];
 }
 
+const calculatorElement = document.querySelector("#calculator");
+const displayElement = document.querySelector("#display-h2");
 
+
+calculatorElement.addEventListener("click", (event) => {
+    let target = event.target;
+
+    let calculatorOperationsObj = {
+        "MC": "",
+        "%": "%",
+        "+": "+",
+        "7": 7,
+        "8": 8,
+        "9": 9
+    };
+
+
+
+    displayElement.textContent = calculatorOperationsObj[target.textContent];
+});
 
 
 
